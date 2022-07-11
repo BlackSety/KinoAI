@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+
+<div class="movie-description">
+    <h3 align="center" style="color:rgb(217,215,224);">{{ movie.name }}</h3>
+      <table width="100%" cellspacing="0" cellpadding="0">
+   <tr>
+         <td align="center" width="330px">
+<img width="300px" height="450px" class="img-movie-poster" src="/media/{{movie.image}}">
+              </td>
+         <td valign="top">
+
+ <p style="color:rgb(217,215,224);">
+
+    {{ movie.description }}
+ <br>
+    {{ movie.country }}
+ <br>
+    {{ movie.director }}
+ <br>
+    {{ movie.producer }}
+ <br>
+    {{ movie.genre }}
+ <br>
+    {{ movie.main }}
+</p>
+          </td>
+            </tr>
+            </table>
+</div>
+<center>
+        <a href="/" >Назад</a>
+</center>
+    <h1 class="movie-pre">Смотри и кайфуй!</h1>
+    <div id="token">{{ movie.magnet_link }}</div>
+    <div id="hero">
+      <div id="output">
+      </div>
+    </div>
+
+    <!-- Include the latest version of WebTorrent -->
+    <script src="https://cdn.jsdelivr.net/npm/webtorrent@latest/webtorrent.min.js"></script>
+
+    <!-- Moment is used to show a human-readable remaining time -->
+    <script src="http://momentjs.com/downloads/moment.min.js"></script>
+
+    <script>
+      const torrentId=(document.getElementById('token')).textContent
+
+      const client = new WebTorrent()
+
+      // Download the torrent
+      client.add(torrentId, function (torrent) {
+
+        // Torrents can contain many files. Let's use the .mp4 file
+        const file = torrent.files.find(function (file) {
+          return file.name.endsWith('.mp4')
+        })
+
+        // Stream the file in the browser
+        file.appendTo('#output')
+
+      })
+    </script>
+{% endblock %}

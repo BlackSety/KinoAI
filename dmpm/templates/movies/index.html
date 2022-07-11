@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+{% load static %}
+<html prefix="og: https://ogp.me/ns# video: http://ogp.me/ns/video# ya: https://webmaster.yandex.ru/vocabularies/" lang="ru"><head>
+
+   <link rel="stylesheet" type="text/css" href="https://gambit-central.dfs.ivi.ru/static/22.07.06/css/nebula-gambit.css?ver=2e6e100537647e1a3ba51be1307440cb">
+
+            <link rel="stylesheet" type="text/css" href="https://gambit-central.dfs.ivi.ru/static/22.07.06/css/page-catalog.css?ver=4a5582cacf00e523da7426cb6355ad6c">
+
+</head>
+
+<body class="basePage catalog">
+
+<header id="menuContainer" class="headerTop__innerWrapper">
+    <div id="headerTop" class="headerTop headerTop_state_init headerTop_hasDropdownMenu">
+        <div class="headerTop__grid">
+            <div class="headerTop__grid-inner">
+                <div class="headerTop__body">
+                    <div class="headerTop__content">
+                        <div data-test="header_logo" class="headerTop__headerLogo headerLogo" itemscope="" itemtype="http://schema.org/Organization">
+                                <div class="headerLogo__link" >
+                                    <img class="nbl-picture" src="{% static 'logo.png' %}" itemprop="logo" alt="KinoAI">
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="mobileNavigationContainer"></div>
+    <div id="search-root"></div>
+        <div class="page-wrapper">
+                <div id="root" class="basePage__inner">
+                    <section class="headerBar collections__headerBar">
+                        <div class="headerBar__container">
+                            <div class="headerBar__container-inner">
+                                <div class="headerBar__titleWrapper">
+                                    <h1 class="headerBar__title" data-test="collections_header_title">Фильмы
+                                    </h1>
+                                </div>
+                                <div class="clause clause_is-native collections__clause">
+                                    <div class="clause__text is-truncated">
+                                        <div class="clause__text-inner hidden-children" data-test="seo_text_collection">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="pageSection catalogControlPanel__pageSection">
+                        <div class="pageSection__container">
+                            <div class="pageSection__container-inner">
+                                <div class="catalogControlPanel collections__catalogControlPanel">
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="pageSection pageSection_virtual collections__pageSection collections__pageSection_virtual">
+                        <div class="pageSection__container">
+                            <div class="pageSection__container-inner">
+                                <div class="collections__gallery gallery gallery_virtual" data-test="collections_block" style="height: 1515px; margin-top: -12px; position: relative; outline: none; min-height: 100vh;">
+                                    <div style="top: 12px; position: absolute; height: 100%; width: 100%; max-height: 100vh;">
+                                        <ul style="margin-top:0px;max-height:100%" class="gallery__list gallery__list_slimPosterBlock gallery__list_type_poster gallery__gallery__list">
+                                            {% for movie in movies %}
+                                            <li class="gallery__item gallery__item_virtual" index="0" data-test="collections_item">
+                                                <a href="movie/{{movie.id}}" data-content-id="480528" class="nbl-slimPosterBlock nbl-slimPosterBlock_type_poster nbl-slimPosterBlock_status_default nbl-slimPosterBlock_iconStatus_none nbl-slimPosterBlock_available collections__nbl-slimPosterBlock">
+                                                    <div class="nbl-slimPosterBlock__imageSection">
+                                                        <div class="nbl-poster nbl-poster_type_poster nbl-slimPosterBlock__nbl-poster">
+                                                            <div class="nbl-poster__imageWrapper" style="overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;">
+                                                                <img class="nbl-poster__image" data-stub="false" src="media/{{movie.image}}" style="height: 100%;
+        width: auto;">
+                                                            </div>
+                                                            <div class="nbl-poster__properties">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="nbl-slimPosterBlock__textSection">
+                                                        <div class="nbl-slimPosterBlock__title">{{ movie.name }}
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>
